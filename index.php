@@ -1,5 +1,16 @@
 <?php get_header(); ?>
 <div class="container-fluid">
+	<div id="slider">
+	<div class="slider-wrapper theme-default">
+        <div class="ribbon"></div>
+        <div id="nivoslider" class="nivoSlider">
+				<?php query_posts('category_name=slider&posts_per_page=3' ); 
+				while ( have_posts() ) : the_post(); ?>
+				<a href="<?php echo get_permalink(); ?>"><?php the_post_thumbnail( 'homepage-slider' );  ?></a>
+				<?php endwhile; wp_reset_query(); ?>
+		</div>
+    </div>
+</div><!-- end of nivoslider -->
 	<div class="row-fluid">
 		<div class="span2">
 			<!--Sidebar content-->
@@ -8,7 +19,7 @@
 		</div>
 		<div class="span10">
 			<!--Body content-->
-			<div class="well">
+			<div id="contenido">
 				<p> este es el numero de la categoria <?php echo $_GET['cat']; ?></p>
 				<h1>Este es el contenido del home</h1>
 				<?php if ( have_posts() ) : 
@@ -21,7 +32,7 @@
 				 else: ?>Lo sentimos, no se han encontrado entradas.
 				<?php endif; ?>
 			</div>
-			<div class="well">
+			<div class="">
 				<?php if ( have_posts() ) : 
 				query_posts( "cat=$_GET[cat]&category_name=plan mensual"/*array('category_name' => 'plan mensual', 'cat' => $_GET['cat'])*/ );
 				while ( have_posts() ) : the_post(); ?>
@@ -29,6 +40,12 @@
 				<?php endwhile; wp_reset_query();
 				 else: ?>Lo sentimos, no se han encontrado entradas.
 				<?php endif; ?>
+			</div>
+			<div class="well">
+				<?php query_posts('category_name=slider&posts_per_page=3' );
+				 while ( have_posts() ) : the_post(); ?>
+				 <a href="<?php echo get_permalink(); ?>"><?php the_post_thumbnail( 'homepage-slider' ); ?></a>
+				 <?php endwhile; wp_reset_query(); ?>
 			</div>
 		</div>
 	</div>
