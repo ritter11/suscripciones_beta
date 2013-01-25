@@ -18,6 +18,7 @@
 	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="<?php bloginfo('rss2_url'); ?>" />
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 </head>
+<html>
 <body>
 	<div style="max-width: 960px; margin: 0 auto 0 auto">
 		<div id="img_cabezera" class="row-fluid">
@@ -34,5 +35,5 @@
 				</div>
 			</div>
 		</div>
-		
+
 	<!-- </div> continua en el index.php--> 
