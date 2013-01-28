@@ -32,8 +32,8 @@
 		</div>
 		<div class="row-fluid">
 			<div clas="span12">
-				<div class="navbar hidden-phone" >
-					<div class="navbar-inner">
+				<div class="navbar hidden-phone"  >
+					<div class="navbar-inner" >
 						<div class="container-fluid" >
 							<?php wp_nav_menu(array('container' => false, 'items_wrap' => '<ul id="menu" class="nav pull-right">%3$s</ul>', 'theme_location' => 'menu')); ?>
 						</div>

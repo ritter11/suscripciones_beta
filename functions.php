@@ -11,8 +11,18 @@ function my_init_method() {
 }
 
 add_action('init', 'my_init_method');
+function my_init_method2() {
+	if (!is_admin()) {
+		wp_deregister_script('bootstrap');
+		wp_register_script('bootstrap', '/wp-content/themes/suscripciones_beta/scripts/bootstrap.min.js');
+		wp_enqueue_script('bootstrap');
+	}
+}
+
+add_action('init', 'my_init_method2');
 
 add_theme_support('post-thumbnails');
 add_image_size('homepage-thumb', 260, 180, true);
 add_image_size('homepage-slider', 500, 300, true);
+add_image_size('promocion-activa', 670, 100, true);
 ?>
