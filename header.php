@@ -1,6 +1,6 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <head>
-	<meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title> <?php if ( is_home() ) { ?><?php bloginfo('name'); ?> | <?php bloginfo('description'); ?><?php } ?>
 		<?php if ( is_author() ) { ?><?php bloginfo('name'); ?> | Archivo por autor<?php } ?>
@@ -28,7 +28,7 @@
 <body>
 	<div style="max-width: 960px; margin: 0 auto 0 auto">
 		<div id="img_cabezera" class="row-fluid">
-			<center><img src="<?php bloginfo('template_url'); ?>/img/header.png" /></center>
+			<center><img src="<?php bloginfo('template_url'); ?>/img/header2.png" /></center>
 		</div>
 		<div class="row-fluid">
 			<div clas="span12">
