@@ -3,9 +3,9 @@
 	<div class="navder">
 		<ul id="ciudades" class="nav nav-pills nav-stacked">
 			<li class="nav-header">
-				Planes de Suscripción
+				<h5>Planes de Suscripción</h5>
 			</li>
-			<li class="active">
+			<li >
 				<a id="arica" href="#">Arica</a>
 			</li>
 			<li>

@@ -1,6 +1,6 @@
 ﻿<!DOCTYPE html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta http-equiv="Content-Type" content=""text/html; charset="UTF-8"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title> <?php if ( is_home() ) { ?><?php bloginfo('name'); ?> | <?php bloginfo('description'); ?><?php } ?>
 		<?php if ( is_author() ) { ?><?php bloginfo('name'); ?> | Archivo por autor<?php } ?>
@@ -35,7 +35,17 @@
 				<div class="navbar hidden-phone"  >
 					<div class="navbar-inner" >
 						<div class="container-fluid" >
-							<?php wp_nav_menu(array('container' => false, 'items_wrap' => '<ul id="menu" class="nav pull-right">%3$s</ul>', 'theme_location' => 'menu')); ?>
+							<ul id="menu" class="nav nav-pills pull-right">
+								<li class="active">
+									<a id="home" href="#">Home</a>
+								</li>
+								<li>
+									<a id="preguntas" href="#">Preguntas Frecuentes</a>
+								</li>
+								<li>
+									<a id="atencionCliente" href="#">Atencion al Cliente</a>
+								</li>
+							</ul>
 						</div>
 					</div>
 				</div>
