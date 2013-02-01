@@ -8,11 +8,7 @@
 		
 		
 		<div class="span10">
-			<!--Body content-->
-			<!--slider-->
-			<div id="slider" class="hidden-phone" style="margin: 0px 0px;">
-			</div><!-- end of nivoslider -->
-			
+			<!--Body content-->		
 			<div id="contenido">
 						
 			</div>

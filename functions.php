@@ -26,6 +26,7 @@ add_theme_support('post-thumbnails');
 add_image_size('homepage-thumb', 260, 180, true);
 add_image_size('homepage-slider', 500, 300, true);
 add_image_size('promocion-activa', 670, 100, true);
+add_image_size('sliders', 763, 300, true);
 
 // incluir archivo .js con los llamados ajax.
 wp_enqueue_script( 'mi-script-ajax',get_bloginfo('stylesheet_directory') . '/scripts/ajax.js', array( 'jquery' ) );
@@ -56,7 +57,7 @@ function buscar_posts_callback() {
     die(); // Siempre hay que terminar con die
 }
 
-/*llamado ajax para las preguntas frecuentes*/
+/*respuesta ajax para las preguntas frecuentes*/
 add_action('wp_ajax_preguntas', 'preguntas_frecuentes');
 add_action('wp_ajax_nopriv_preguntas', 'preguntas_frecuentes');
 function preguntas_frecuentes() {
@@ -68,19 +69,19 @@ function preguntas_frecuentes() {
     die(); // Siempre hay que terminar con die
 }
 
-/*llamado ajax para el nivo slider*/
-add_action('wp_ajax_slider', 'add_slider');
-add_action('wp_ajax_nopriv_slider', 'add_slider');
-function add_slider() {
+/*respuesta ajax para el principal*/
+add_action('wp_ajax_principal', 'principal');
+add_action('wp_ajax_nopriv_principal', 'principal');
+function principal() {
      $nonce = $_POST['nonce'];
     if ( ! wp_verify_nonce( $nonce, 'myajax-post-comment-nonce' ) ){
         die ( 'No intentes hacer algo indebido!');
 	}
-	get_template_part('slider');
+	get_template_part('principal');
     die(); // Siempre hay que terminar con die
 }
 
-/*llamado ajax para planes de antofagasta*/
+/*respuesta ajax para planes de antofagasta*/
 add_action('wp_ajax_antofagasta', 'planes_antofagasta');
 add_action('wp_ajax_nopriv_antofagasta', 'planes_antofagasta');
 function planes_antofagasta() {
@@ -88,7 +89,68 @@ function planes_antofagasta() {
     if ( ! wp_verify_nonce( $nonce, 'myajax-post-comment-nonce' ) ){
         die ( 'No intentes hacer algo indebido!');
 	}
-	get_template_part('antofagasta');
+	get_template_part('./web/ciudades_template/antofagasta');
     die(); // Siempre hay que terminar con die
 }
+
+/*respuesta ajax para planes de arica*/
+add_action('wp_ajax_arica', 'planes_arica');
+add_action('wp_ajax_nopriv_arica', 'planes_arica');
+function planes_arica() {
+     $nonce = $_POST['nonce'];
+    if ( ! wp_verify_nonce( $nonce, 'myajax-post-comment-nonce' ) ){
+        die ( 'No intentes hacer algo indebido!');
+	}
+	get_template_part('./web/ciudades_template/arica');
+    die(); // Siempre hay que terminar con die
+}
+
+/*respuesta ajax para planes de iquique*/
+add_action('wp_ajax_iquique', 'planes_iquique');
+add_action('wp_ajax_nopriv_iquique', 'planes_iquique');
+function planes_iquique() {
+     $nonce = $_POST['nonce'];
+    if ( ! wp_verify_nonce( $nonce, 'myajax-post-comment-nonce' ) ){
+        die ( 'No intentes hacer algo indebido!');
+	}
+	get_template_part('./web/ciudades_template/iquique');
+    die(); // Siempre hay que terminar con die
+}
+
+/*respuesta ajax para planes de calama*/
+add_action('wp_ajax_calama', 'planes_calama');
+add_action('wp_ajax_nopriv_calama', 'planes_calama');
+function planes_calama() {
+     $nonce = $_POST['nonce'];
+    if ( ! wp_verify_nonce( $nonce, 'myajax-post-comment-nonce' ) ){
+        die ( 'No intentes hacer algo indebido!');
+	}
+	get_template_part('./web/ciudades_template/calama');
+    die(); // Siempre hay que terminar con die
+}
+
+/*respuesta ajax para planes de tocopilla*/
+add_action('wp_ajax_tocopilla', 'planes_tocopilla');
+add_action('wp_ajax_nopriv_tocopilla', 'planes_tocopilla');
+function planes_tocopilla() {
+     $nonce = $_POST['nonce'];
+    if ( ! wp_verify_nonce( $nonce, 'myajax-post-comment-nonce' ) ){
+        die ( 'No intentes hacer algo indebido!');
+	}
+	get_template_part('./web/ciudades_template/calama');
+    die(); // Siempre hay que terminar con die
+}
+
+/*respuesta ajax para planes de copiapo*/
+add_action('wp_ajax_copiapo', 'planes_copiapo');
+add_action('wp_ajax_nopriv_copiapo', 'planes_copiapo');
+function planes_copiapo() {
+     $nonce = $_POST['nonce'];
+    if ( ! wp_verify_nonce( $nonce, 'myajax-post-comment-nonce' ) ){
+        die ( 'No intentes hacer algo indebido!');
+	}
+	get_template_part('./web/ciudades_template/copiapo');
+    die(); // Siempre hay que terminar con die
+}
+
 ?>

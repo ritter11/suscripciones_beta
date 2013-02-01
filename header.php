@@ -37,13 +37,13 @@
 						<div class="container-fluid" >
 							<ul id="menu" class="nav nav-pills pull-right">
 								<li class="active">
-									<a id="home" href="#">Home</a>
+									<a id="home" href="#"><i class="icon-home"></i> <strong>Home</strong></a>
 								</li>
 								<li>
-									<a id="preguntas" href="#">Preguntas Frecuentes</a>
+									<a id="preguntas" href="#"><i class="icon-question-sign"></i> <strong>Preguntas Frecuentes</strong></a>
 								</li>
 								<li>
-									<a id="atencionCliente" href="#">Atencion al Cliente</a>
+									<a id="atencionCliente" href="#"><i class="icon-info-sign"></i> <strong>Atencion al Cliente</strong></a>
 								</li>
 							</ul>
 						</div>
