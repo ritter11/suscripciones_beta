@@ -23,10 +23,14 @@
 			<li>
 				<a id="copiapo" href="#">Copiapo</a>
 			</li>
-			<li>
-				<a href="#">Beneficios Club de Lectores</a>
+		</ul>
+		<ul class="thumbnails">
+			<li class="span12">
+				<a href="#" class="thumbnail"><img src="<?php bloginfo('template_url'); ?>/img/clubdelectores.jpg" /></a>
 			</li>
 		</ul>
+			
+		
 
 	</div>
 	<!--</div>-->

@@ -18,7 +18,32 @@ jQuery(document).ready(function($) {
 			});
 		});
 	}
+	$('#megaUber span').click(function(evento) {
+		evento.preventDefault();
+		var $this = $(this);
+		if($this.text() == "Atencion al Cliente")
+		{
+			$('#myModal').modal('show')
+			
+		}
+		else if($this.text() == "Preguntas Frecuentes")
+		{
+			$.post(MyAjax.url, {
+			nonce : MyAjax.nonce,
+			action : 'preguntas'
+			}, function(response) {
+				$('#contenido').hide().html(response).fadeIn();
+			});	
+		}
+		else if($this.text() == "Inicio")
+		{
+			principal();
+		}
+		
+
+	});
 	$('#preguntas').click(function(evento) {
+		alert("hola");
 		evento.preventDefault();
 		$.post(MyAjax.url, {
 			nonce : MyAjax.nonce,

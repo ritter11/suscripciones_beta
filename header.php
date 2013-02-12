@@ -26,30 +26,21 @@
 </head>
 <html>
 <body>
-	<div style="max-width: 960px; margin: 0 auto 0 auto">
+	<div style="max-width: 960px; margin: 0 auto 0 auto; background-color: rgb(255,255,255);">
 		<div id="img_cabezera" class="row-fluid">
-			<center><img src="<?php bloginfo('template_url'); ?>/img/header2.png" /></center>
+			<center><img src="<?php bloginfo('template_url'); ?>/img/logo-mercurio.gif" /></center>
 		</div>
 		<div class="row-fluid">
 			<div clas="span12">
-				<div class="navbar hidden-phone"  >
-					<div class="navbar-inner" >
-						<div class="container-fluid" >
-							<ul id="menu" class="nav nav-pills pull-right">
-								<li class="active">
-									<a id="home" href="#"><i class="icon-home"></i> <strong>Home</strong></a>
-								</li>
-								<li>
-									<a id="preguntas" href="#"><i class="icon-question-sign"></i> <strong>Preguntas Frecuentes</strong></a>
-								</li>
-								<li>
-									<a id="atencionCliente" href="#"><i class="icon-info-sign"></i> <strong>Atencion al Cliente</strong></a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
+				<?php delicate_show_navigation ('menu', 'delicate_show_pagemenu'); ?>				
 			</div>
+			<div class="navbar hidden-phone"  >
+				<div class="container-fluid" >
+					<ul id="menu" class="nav nav-pills pull-right">
+						
+					</ul>
+					</div>
+					</div>
 		</div>
-
+		
 	<!-- </div> continua en el index.php--> 

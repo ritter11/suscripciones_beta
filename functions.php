@@ -1,4 +1,17 @@
 ﻿<?php
+
+
+ if ( function_exists('register_sidebar') )
+       register_sidebar(array(
+		'name'=>'form_widget',
+        'before_widget' => '<div id="%1$s" class="container-fluid %2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h3 class="widgettitle">',
+        'after_title' => '</h3>',
+  ));
+function delicate_show_navigation($args, $func) {
+  wp_nav_menu( array( 'container' => '', 'menu_class' => 'topnav fl fr sf-js-enabled sf-shadow', 'menu_id' => 'nav-ie', 'theme_location' => $args, 'link_before' => '<span>', 'link_after' => '</span>', 'fallback_cb' => $func ) );
+}
 register_nav_menus(array('menu' => 'Menu principal', 'menu_lateral' => 'Menu lateral'));
 
 /* Mi jQuery */
@@ -25,8 +38,8 @@ add_action('init', 'my_init_method2');
 add_theme_support('post-thumbnails');
 add_image_size('homepage-thumb', 260, 180, true);
 add_image_size('homepage-slider', 500, 300, true);
-add_image_size('promocion-activa', 670, 100, true);
 add_image_size('sliders', 763, 300, true);
+add_image_size('promocion-activa', 670, 220, true);
 
 // incluir archivo .js con los llamados ajax.
 wp_enqueue_script( 'mi-script-ajax',get_bloginfo('stylesheet_directory') . '/scripts/ajax.js', array( 'jquery' ) );
@@ -150,6 +163,18 @@ function planes_copiapo() {
         die ( 'No intentes hacer algo indebido!');
 	}
 	get_template_part('./web/ciudades_template/copiapo');
+    die(); // Siempre hay que terminar con die
+}
+
+/*respuesta ajax para servicio al cliente*/
+add_action('wp_ajax_servicio', 'servicio_cliente');
+add_action('wp_ajax_nopriv_servicio', 'servicio_cliente');
+function servicio_cliente() {
+     $nonce = $_POST['nonce'];
+    if ( ! wp_verify_nonce( $nonce, 'myajax-post-comment-nonce' ) ){
+        die ( 'No intentes hacer algo indebido!');
+	}
+	get_template_part('servicio_cliente');
     die(); // Siempre hay que terminar con die
 }
 

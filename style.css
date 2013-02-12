@@ -1,12 +1,19 @@
-/*!
- * Bootstrap v2.2.2
- *
- * Copyright 2012 Twitter, Inc
- * Licensed under the Apache License v2.0
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Designed and built with all the love in the world @twitter by @mdo and @fat.
- */
+/*
+----------------------------------------------------------------------
+Theme Name: Delicate
+Theme URI:  http://twitter.github.com/bootstrap/
+Description: Delicate is a resposive and highly customizable lightweight theme, designed to make your blog works on mobile devices and the endless number of desktop screen resolutions. With Delicate you can adjust Color scheme, display Page-based Slideshow or Header image, style your page content with additional Shortcodes, change Slideshow effects and control Transition speed. This is a free professional WordPress theme built on the NattyWP CMS Framework.
+Version: 3.5.4
+Author: bootstrap
+Author URI:  http://twitter.github.com/bootstrap/
+Tags: light, blue, white, two-columns, fixed-width, custom-header, custom-menu, custom-colors, custom-background, threaded-comments, sticky-post, translation-ready, theme-options, featured-image-header, featured-images, flexible-header, flexible-width
+----------------------------------------------------------------------
+
+Support: bootstrap, http://twitter.github.com/bootstrap/
+Updated: Feb 08 2013
+License: This version licensed under the terms of GNU General Public License v2.0.
+License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+*/
 .clearfix {
   *zoom: 1;
 }
@@ -209,7 +216,7 @@ body {
   font-size: 14px;
   line-height: 20px;
   color: #333333;
-  background-color: #ffffff;
+  background-color: #FFFFFF;
 }
 a {
   color: #0088cc;
@@ -4651,6 +4658,7 @@ a.thumbnail:hover {
 .modal-header {
   padding: 9px 15px;
   border-bottom: 1px solid #eee;
+  background-color: #2E9AFE;
 }
 .modal-header .close {
   margin-top: 2px;
@@ -6100,4 +6108,45 @@ button.close {
     height: auto !important;
     overflow: visible !important;
   }
+}
+.clearfix:after {
+    clear: both;
+    content: " ";
+    display: block;
+    font-size: 0;
+    height: 0;
+    line-height: 0;
+    visibility: hidden;
+    width: 0;
+}
+#bottom {
+    background: none repeat scroll 0 0 #666666;
+    border-top: 10px solid #333333;
+}
+#bottom {
+    clear: both;
+    float: left;
+    margin-top: 100px;
+    padding-bottom: 120px;
+    padding-top: 35px;
+    width: 100%;
+}
+#bottom {
+    background: none repeat scroll 0 0 #666666;
+    border-top: 10px solid #333333;
+}
+.clearfix {
+    display: block;
+}
+.clearfix {
+    display: inline-block;
+}
+
+
+.wrapper {
+    width: 970px;
+	text-align: left;
+	margin: 0pt auto;
+	padding: 0 30px;
+	position: relative;
 }
