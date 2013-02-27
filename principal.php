@@ -5,33 +5,61 @@
 ?>
 <!--slider-->
 <div id="slider" class="hidden-phone">
-	<div class="slider-wrapper theme-default">
-		<div class="ribbon"></div>
-		<div id="nivoslider" class="nivoSlider">
-			<?php query_posts('category_name=slider');/*&posts_per_page=3' );*/
+<div class="slider-wrapper theme-default">
+<div class="ribbon"></div>
+<div id="nivoslider" class="nivoSlider">
+<?php query_posts('category_name=slider');/*&posts_per_page=3' );*/
 while ( have_posts() ) : the_post(); ?>
 <!--<a href="<?php echo get_permalink(); ?>">--><?php the_post_thumbnail('sliders'); ?>
 	<!--</a>-->
 			<?php endwhile; wp_reset_query(); ?>
 		</div>
-		<center>
+		
+	</div>
+
+</div><!-- end of nivoslider -->
+<center>
 			<div style="padding-top:1px; padding-bottom: 20px;">
-					<?php query_posts(array('category_name' => 'home2'));
+				<span style="padding-right: 20px">
+					<?php query_posts(array('category_name' => 'foot1'));
 					while ( have_posts() ) : the_post(); ?>
-						<img src="<?php $src = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), array( 720,405 ), false, '' );
-						echo $src[0];?>" class="img-polaroid">				
+						<img src="<?php $src = wp_get_attachment_image_src(get_post_thumbnail_id($post -> ID), array(720, 405), false, '');
+						echo $src[0];
+					?>" class="img-polaroid">				
 					<?php endwhile; wp_reset_query(); ?>
-			
+				</span>
 				
-					<?php query_posts(array('category_name' => 'home3'));
+					
+					<span style="padding-left: 20px">
+						<?php query_posts(array('category_name' => 'foot2'));
 					while ( have_posts() ) : the_post(); ?>
-					<span style="padding-left: 40px">
-						<img src="<?php $src = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), array( 720,405 ), false, '' );
-						echo $src[0];?>" class="img-polaroid">
-					</span>			
+						<img src="<?php $src = wp_get_attachment_image_src(get_post_thumbnail_id($post -> ID), array(720, 405), false, '');
+						echo $src[0];
+					?>" class="img-polaroid">				
 					<?php endwhile; wp_reset_query(); ?>
+					
+						<!--query para traer la imagen de promocion especial si es que esta existe -->
+						<?php query_posts(array('category_name' => 'promocion especial'));
+					while ( have_posts() ) : the_post(); ?>
+						<a id="promo" href="#"><img src="<?php $src = wp_get_attachment_image_src(get_post_thumbnail_id($post -> ID), array(720, 405), false, '');
+						echo $src[0];
+					?>" class="img-polaroid promo"></a>
+						<?php endwhile; wp_reset_query(); ?>
+					</span>			
+					
 			</div>			
 		</center>
-	</div>
-	
-</div><!-- end of nivoslider -->
+<script>
+	$('#promo').click(function(evento) {
+
+		evento.preventDefault();
+		$.post(MyAjax.url, {
+			nonce : MyAjax.nonce,
+			action : 'promo'
+		}, function(response) {
+			$('#contenido').hide().html(response).fadeIn();
+		});
+
+	}); 
+</script>
+

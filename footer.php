@@ -8,20 +8,6 @@
 				</p>
 			</div>
 		</div>
-		<div class="second_col">
-			<div class="widget">
-				<h3><span>Club de Lectores</span></h3>
-				<p></p>
-				<ul class="content_link_footer">
-					<li><li><li><li><li><li>
-					<li>
-						<p></p>
-				</ul>
-			</div>
-		</div>
-		<div class="third_col fr">
-			<div class="fourth_col fr"></div>
-		</div>
 	</div>
 </div>
 
@@ -37,8 +23,10 @@ $('#nivoslider').nivoSlider();
 		e.target// activated tab
 		e.relatedTarget // previous tab
 	})
+	
 
 </script>
+
 <style>
 	#mensaje {
 		width: 480;

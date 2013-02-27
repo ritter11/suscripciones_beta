@@ -1,45 +1,58 @@
 jQuery(document).ready(function($) {
-	
+
 	principal();
-	
-	$('#home').click(function(e){
+	/*$('#promo').click(function(evento) {
+	 alert("hola mundo");
+
+	 evento.preventDefault();
+	 $.post(MyAjax.url, {
+	 nonce : MyAjax.nonce,
+	 action : 'promo'
+	 }, function(response) {
+	 $('#contenido').hide();
+	 });
+
+	 });*/
+
+	$('#home').click(function(e) {
 		e.preventDefault();
 		principal();
 	});
-	
-	function principal(){
+
+	function principal() {
 		$.post(MyAjax.url, {
 			nonce : MyAjax.nonce,
 			action : 'principal'
 		}, function(response) {
 			$('#contenido').hide().html(response).fadeIn(function() {
-			$('#nivoslider').nivoSlider();
-			
+				$('#nivoslider').nivoSlider();
 			});
 		});
 	}
+
+
 	$('#megaUber span').click(function(evento) {
 		evento.preventDefault();
 		var $this = $(this);
-		if($this.text() == "Atencion al Cliente")
-		{
-			$('#myModal').modal('show')
-			
-		}
-		else if($this.text() == "Preguntas Frecuentes")
-		{
+		if ($this.text() == "Atencion al Cliente") {
+			//$('#myModal').modal('show')
 			$.post(MyAjax.url, {
-			nonce : MyAjax.nonce,
-			action : 'preguntas'
+				nonce : MyAjax.nonce,
+				action : 'servicio'
 			}, function(response) {
 				$('#contenido').hide().html(response).fadeIn();
-			});	
-		}
-		else if($this.text() == "Inicio")
-		{
+			});
+
+		} else if ($this.text() == "Preguntas Frecuentes") {
+			$.post(MyAjax.url, {
+				nonce : MyAjax.nonce,
+				action : 'preguntas'
+			}, function(response) {
+				$('#contenido').hide().html(response).fadeIn();
+			});
+		} else if ($this.text() == "Inicio") {
 			principal();
 		}
-		
 
 	});
 	$('#preguntas').click(function(evento) {
@@ -53,7 +66,7 @@ jQuery(document).ready(function($) {
 		});
 
 	});
-	
+
 	/*planes*/
 	/*antofagasta*/
 	$('#antofagasta').click(function(evento) {
@@ -66,7 +79,7 @@ jQuery(document).ready(function($) {
 		});
 
 	});
-	
+
 	/*arica*/
 	$('#arica').click(function(evento) {
 		evento.preventDefault();
@@ -78,7 +91,7 @@ jQuery(document).ready(function($) {
 		});
 
 	});
-	
+
 	/*iquique*/
 	$('#iquique').click(function(evento) {
 		evento.preventDefault();
@@ -90,7 +103,7 @@ jQuery(document).ready(function($) {
 		});
 
 	});
-	
+
 	/*calama */
 	$('#calama').click(function(evento) {
 		evento.preventDefault();
@@ -102,7 +115,7 @@ jQuery(document).ready(function($) {
 		});
 
 	});
-	
+
 	/*tocopilla*/
 	$('#tocopilla').click(function(evento) {
 		evento.preventDefault();
@@ -114,7 +127,7 @@ jQuery(document).ready(function($) {
 		});
 
 	});
-	
+
 	/*copiapo*/
 	$('#copiapo').click(function(evento) {
 		evento.preventDefault();
@@ -145,4 +158,5 @@ jQuery(document).ready(function($) {
 		}
 		e.preventDefault();
 	});
+	
 });

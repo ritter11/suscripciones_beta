@@ -21,14 +21,29 @@
 	<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/scripts/nivo-slider.css" media="screen" />
 	
 	 <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/scripts/themes/default/default.css" type="text/css" media="screen" />
+	<!--[if IE]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<!--[if IE]>
+		<script type="text/javascript">
+			document.createElement("article");
+			document.createElement("nav");
+			document.createElement("section");
+			document.createElement("header");
+			document.createElement("aside");
+			document.createElement("figure");
+			document.createElement("legend");
+			document.createElement("footer");
+		</script>
+	<![endif] -->
 	 
  	
 </head>
 <html>
 <body>
 	<div style="max-width: 960px; margin: 0 auto 0 auto; background-color: rgb(255,255,255);">
-		<div id="img_cabezera" class="row-fluid">
-			<center><img src="<?php bloginfo('template_url'); ?>/img/logo-mercurio.gif" /></center>
+		<div id="img_cabezera" class="row-fluid" style="padding-bottom: 3px">
+			<img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" />
 		</div>
 		<div class="row-fluid">
 			<div clas="span12">

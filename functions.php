@@ -178,4 +178,66 @@ function servicio_cliente() {
     die(); // Siempre hay que terminar con die
 }
 
+/*respuesta ajaxk para la promocion especial*/
+add_action('wp_ajax_promo', 'promocion_especial');
+add_action('wp_ajax_nopriv_promo', 'promocion_especial');
+function promocion_especial() {
+     $nonce = $_POST['nonce'];
+    if ( ! wp_verify_nonce( $nonce, 'myajax-post-comment-nonce' ) ){
+        die ( 'No intentes hacer algo indebido!');
+	}
+	get_template_part('promocion_especial');
+    die(); // Siempre hay que terminar con die
+}
+
+/*Funcion que retorna codigo para generar los contactos*/
+function print_frecuent_question(){
+       
+               query_posts('category_name=Concursos');
+               global $post;
+               if(have_posts()){
+                       echo "<div class='accordion' id='accordion2'>";
+                       while(have_posts()):the_post();
+                                       //impreme todos los post con categoria preguntas frecuentes
+                                       //en un panel colapsable
+                                       echo "<!-tab arica->";
+                                       echo "<div class='accordion-group'>";
+                                               echo"<div class='accordion-heading'>";
+                                                       echo"<a class='accordion-toggle' data-toggle='collapse' data-parent='#accordion2' href='#post-";
+                                                       echo the_ID();
+                                                       echo "'>";                                                        
+                                                       echo "<h5>".the_title()."</h5> </a>";
+                                               echo"</div>";
+                                                       echo "<div id='post-";
+                                                       echo the_ID();
+                                                       echo "' class='accordion-body collapse'>";
+                                                               echo "<div class='accordion-inner'>";
+                                                                       the_content();
+                                                               echo"</div>";
+                                                       echo "</div>";
+                                       echo "</div>";
+                                       //fin del loop de imprecion 
+                       endwhile;
+                       echo "</div>";
+               
+               }
+
+}
+/*agreagar funcion para editar la cabecera de la pagina*/
+$defaults = array(
+    'default-image'          => '', # No hay URL a imagen por defecto
+    'random-default'         => false, # La imagen mostrada deberá ser seleccionada manualmente
+    'width'                  => 960, # No hay ancho definido - podrá ser elegido al recortar
+    'height'                 => 90, # No hay altura definida - podrá ser elegido al recortar
+    'flex-width'             => true, # Ancho flexible desactivado
+    'flex-height'            => true, # Altura flexible desactivada
+    'default-text-color'     => '', # El color del texto en el header debe elegirse
+    'header-text'            => false, # Se mostrará el texto del header (título + descripción)
+    'uploads'                => true, # Pueden subirse imágenes nuevas
+    'wp-head-callback'       => '', 
+    'admin-head-callback'    => '',
+    'admin-preview-callback' => '',
+);
+add_theme_support( 'custom-header' , $defaults );
+
 ?>
