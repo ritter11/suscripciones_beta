@@ -31,7 +31,7 @@ jQuery(document).ready(function($) {
 	}
 
 
-	$('#megaUber span').click(function(evento) {
+	$('#megaUber li').click(function(evento) {
 		evento.preventDefault();
 		var $this = $(this);
 		if ($this.text() == "Atencion al Cliente") {
@@ -55,8 +55,9 @@ jQuery(document).ready(function($) {
 		}
 
 	});
+	
+	/*<menu principal>*/
 	$('#preguntas').click(function(evento) {
-		alert("hola");
 		evento.preventDefault();
 		$.post(MyAjax.url, {
 			nonce : MyAjax.nonce,
@@ -66,10 +67,28 @@ jQuery(document).ready(function($) {
 		});
 
 	});
+	
+	$('#inicio').click(function(evento) {
+		evento.preventDefault();
+		principal();
+
+	});
+	
+	$('#atencion_cliente').click(function(evento) {
+		evento.preventDefault();
+		$.post(MyAjax.url, {
+			nonce : MyAjax.nonce,
+			action : 'servicio'
+		}, function(response) {
+			$('#contenido').hide().html(response).fadeIn();
+		});
+
+	});
+	/*</menu principal>*/
 
 	/*planes*/
 	/*antofagasta*/
-	$('#antofagasta').click(function(evento) {
+	$('.antofagasta').click(function(evento) {
 		evento.preventDefault();
 		$.post(MyAjax.url, {
 			nonce : MyAjax.nonce,
@@ -81,7 +100,7 @@ jQuery(document).ready(function($) {
 	});
 
 	/*arica*/
-	$('#arica').click(function(evento) {
+	$('.arica').click(function(evento) {
 		evento.preventDefault();
 		$.post(MyAjax.url, {
 			nonce : MyAjax.nonce,
@@ -93,7 +112,7 @@ jQuery(document).ready(function($) {
 	});
 
 	/*iquique*/
-	$('#iquique').click(function(evento) {
+	$('.iquique').click(function(evento) {
 		evento.preventDefault();
 		$.post(MyAjax.url, {
 			nonce : MyAjax.nonce,
@@ -105,7 +124,7 @@ jQuery(document).ready(function($) {
 	});
 
 	/*calama */
-	$('#calama').click(function(evento) {
+	$('.calama').click(function(evento) {
 		evento.preventDefault();
 		$.post(MyAjax.url, {
 			nonce : MyAjax.nonce,
@@ -117,7 +136,7 @@ jQuery(document).ready(function($) {
 	});
 
 	/*tocopilla*/
-	$('#tocopilla').click(function(evento) {
+	$('.tocopilla').click(function(evento) {
 		evento.preventDefault();
 		$.post(MyAjax.url, {
 			nonce : MyAjax.nonce,
@@ -129,7 +148,7 @@ jQuery(document).ready(function($) {
 	});
 
 	/*copiapo*/
-	$('#copiapo').click(function(evento) {
+	$('.copiapo').click(function(evento) {
 		evento.preventDefault();
 		$.post(MyAjax.url, {
 			nonce : MyAjax.nonce,
@@ -141,7 +160,7 @@ jQuery(document).ready(function($) {
 	});
 
 	$('.navder li').click(function(e) {
-		$('.navbar li').removeClass('active');
+		$('#megaMenu li').removeClass('current-menu-item');
 		$('.navder li').removeClass('active');
 		var $this = $(this);
 		if (!$this.hasClass('active')) {
@@ -151,10 +170,20 @@ jQuery(document).ready(function($) {
 	});
 	$('.navbar li').click(function(e) {
 		$('.navbar li').removeClass('active');
-		$('.navder li').removeClass('active');
+		$('#megaMenu li').removeClass('current-menu-item');
 		var $this = $(this);
 		if (!$this.hasClass('active')) {
 			$this.addClass('active');
+		}
+		e.preventDefault();
+	});
+	
+	$('#megaMenu li').click(function(e) {
+		$('.navder li').removeClass('active');
+		$('#megaMenu li').removeClass('current-menu-item');
+		var $this = $(this);
+		if (!$this.hasClass('current-menu-item')) {
+			$this.addClass('current-menu-item');
 		}
 		e.preventDefault();
 	});

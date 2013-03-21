@@ -23,17 +23,19 @@
 
 <div class="tab-content">
 	<div class="tab-pane fade in active" id="planes">
-		<div>
+		<div style="padding-bottom: 5px;">
 			<?php query_posts(array('category_name' => 'plan anual', 'tag' => 'antofagasta'));
 			while ( have_posts() ) : the_post(); ?>
-			<img src="<?php $src = wp_get_attachment_image_src(get_post_thumbnail_id($post -> ID), array(720, 405), false, '');
+			<span style="padding-right: 5px">
+				<img src="<?php $src = wp_get_attachment_image_src(get_post_thumbnail_id($post -> ID), array(720, 405), false, '');
 				echo $src[0];
-			?>" class="img-polaroid"" >
+				?>" class="img-polaroid"" >
+			</span>
 			<?php endwhile; wp_reset_query(); ?>
 
 			<?php query_posts(array('category_name' => 'convenio empresa', 'tag' => 'antofagasta'));
 			while ( have_posts() ) : the_post(); ?>
-			<span style="padding-left: 10px">
+			<span style="padding-left: 5px">
 			<img src="<?php $src = wp_get_attachment_image_src(get_post_thumbnail_id($post -> ID), array(720, 405), false, '');
 				echo $src[0];
 			?>" class="img-polaroid">
@@ -41,7 +43,7 @@
 			<?php endwhile; wp_reset_query(); ?>
 		</div>
 
-		<div style="padding-top:10px; padding-bottom: 20px;">
+		<div style="padding-top:5px; padding-bottom: 20px;">
 			<?php query_posts(array('category_name' => 'plan semestral', 'tag' => 'antofagasta'));
 			while ( have_posts() ) : the_post(); ?>
 			<img src="<?php $src = wp_get_attachment_image_src(get_post_thumbnail_id($post -> ID), array(720, 405), false, '');
@@ -136,3 +138,4 @@
 	</div>
 </div>
 
+	

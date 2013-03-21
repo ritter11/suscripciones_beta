@@ -41,7 +41,7 @@ while ( have_posts() ) : the_post(); ?>
 						<!--query para traer la imagen de promocion especial si es que esta existe -->
 						<?php query_posts(array('category_name' => 'promocion especial'));
 					while ( have_posts() ) : the_post(); ?>
-						<a id="promo" href="#"><img src="<?php $src = wp_get_attachment_image_src(get_post_thumbnail_id($post -> ID), array(720, 405), false, '');
+						<a id="promo" href="#contenido"><img src="<?php $src = wp_get_attachment_image_src(get_post_thumbnail_id($post -> ID), array(720, 405), false, '');
 						echo $src[0];
 					?>" class="img-polaroid promo"></a>
 						<?php endwhile; wp_reset_query(); ?>

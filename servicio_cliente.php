@@ -1,122 +1,113 @@
-﻿<div class="accordion" id="accordion2">
+<div class="accordion" id="accordion2">
+	
+	<p>
+	Aqu&iacute; podr&aacute; encontrar respuesta a sus consultas con respecto a suscripci&oacute;n, nuestras plataformas dispuestas para ayudarlo son:
+	</p>
 	<!--tab arica-->
-	Aquí podrá encontrar respuesta a sus consultas con respecto a suscripción, nuestras plataformas dispuestas para ayudarlo son:
-	<p></p>
+	<?php query_posts(array('category_name' => 'contacto', 'tag' => 'arica'));
+	while ( have_posts() ) : the_post(); ?>
 	<div class="accordion-group">
 		<div class="accordion-heading">
-			<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#Arica"> <h5>Arica </h5> </a>
+			<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#Arica"> <?php echo "<h5>"; the_title(); echo "</h5>"; ?>  </a>
 		</div>
 		<div id="Arica" class="accordion-body collapse">
 			<div class="accordion-inner">
 				<p>
-					Dirección: San Marcos 580
-				</p>
-				<p>
-					Teléfono:
+					<?php the_content(); ?>
 				</p>
 			</div>
 		</div>
 	</div>
+	<?php endwhile; wp_reset_query(); ?>
+	
 	<!--tab iqq-->
+	<?php query_posts(array('category_name' => 'contacto', 'tag' => 'iquique'));
+	while ( have_posts() ) : the_post(); ?>
 	<div class="accordion-group">
 		<div class="accordion-heading">
-			<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#Iquique"> <h5>Iquique </h5> </a>
+			<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#iquique"> <h5><?php the_title(); ?> </h5> </a>
 		</div>
-		<div id="Iquique" class="accordion-body collapse">
+		<div id="iquique" class="accordion-body collapse">
 			<div class="accordion-inner">
 				<p>
-					Dirección: Luis Uribe 452
-				</p>
-				<p>
-					Teléfono:
-				</p>
-				<p>
-					Mall Zofri sector nuevo 2do. piso
-				</p>
-				<p>
-					Teléfono:
+					<?php the_content(); ?>
 				</p>
 			</div>
 		</div>
 	</div>
+	<?php endwhile; wp_reset_query(); ?>
 	<!--tab Antofagasta-->
+	<?php query_posts(array('category_name' => 'contacto', 'tag' => 'antofagasta'));
+	while ( have_posts() ) : the_post(); ?>
 	<div class="accordion-group">
 		<div class="accordion-heading">
-			<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#Antofagasta"> <h5>Antofagasta </h5> </a>
+			<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#Antofagasta"> <h5><?php the_title(); ?> </h5> </a>
 		</div>
 		<div id="Antofagasta" class="accordion-body collapse">
 			<div class="accordion-inner">
 				<p>
-					Dirección: Manuel Antonio Matta 2112
-				</p>
-				<p>
-					Teléfono:55+453709 / 55+453651
-				</p>
-				<p>
-					Casa Club ubicada en Mall Plaza Antofagasta, Boulevard de Servicios
-				</p>
-				<p>
-					Teléfono:
+					<?php the_content(); ?>
 				</p>
 			</div>
 		</div>
 	</div>
+	<?php endwhile; wp_reset_query(); ?>
 
 	<!--tab calama-->
+	<?php query_posts(array('category_name' => 'contacto', 'tag' => 'calama'));
+	while ( have_posts() ) : the_post(); ?>
 	<div class="accordion-group">
 		<div class="accordion-heading">
-			<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#Calama"> <h5>Calama </h5> </a>
+			<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#calama"> <h5><?php the_title(); ?> </h5> </a>
 		</div>
-		<div id="Calama" class="accordion-body collapse">
+		<div id="calama" class="accordion-body collapse">
 			<div class="accordion-inner">
 				<p>
-					Dirección: Abaroa  2051
-				</p>
-				<p>
-					Teléfono:
+					<?php the_content(); ?>
 				</p>
 			</div>
 		</div>
 	</div>
+	<?php endwhile; wp_reset_query(); ?>
 
 	<!--tab Tocopilla-->
+	<?php query_posts(array('category_name' => 'contacto', 'tag' => 'tocopilla'));
+	while ( have_posts() ) : the_post(); ?>
 	<div class="accordion-group">
 		<div class="accordion-heading">
-			<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#Tocopilla"> <h5>Tocopilla </h5> </a>
+			<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#tocopilla"> <h5><?php the_title(); ?> </h5> </a>
 		</div>
-		<div id="Tocopilla" class="accordion-body collapse">
+		<div id="tocopilla" class="accordion-body collapse">
 			<div class="accordion-inner">
 				<p>
-					Dirección: Bolivar 1252
-				</p>
-				<p>
-					Teléfono:
+					<?php the_content(); ?>
 				</p>
 			</div>
 		</div>
 	</div>
+	<?php endwhile; wp_reset_query(); ?>
 
-	<!--tab Copiapó-->
+	<!--tab Copiap�-->
+	<?php query_posts(array('category_name' => 'contacto', 'tag' => 'copiapo'));
+	while ( have_posts() ) : the_post(); ?>
 	<div class="accordion-group">
 		<div class="accordion-heading">
-			<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#Copiapo"> <h5>Copiapó </h5> </a>
+			<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#copiapo"> <h5><?php the_title(); ?></h5> </a>
 		</div>
-		<div id="Copiapo" class="accordion-body collapse">
+		<div id="copiapo" class="accordion-body collapse">
 			<div class="accordion-inner">
 				<p>
-					Dirección: Atacama 725 – A
-				</p>
-				<p>
-					Teléfono:
+					<?php the_content(); ?>
 				</p>
 			</div>
 		</div>
 	</div>
+	<?php endwhile; wp_reset_query(); ?>
 
 	<!--tab formulario-->
 	<div class="accordion-group">
 		<div class="accordion-heading">
-			<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#mail"> <h5>Vía e-mail </h5> </a>
+			<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#mail"> <h5>V&iacute;a e-mail </h5> </a>
 		</div>
 		<div id="mail" class="accordion-body collapse">
 			<div class="accordion-inner">
@@ -155,7 +146,9 @@
 									Tu Mensaje
 								</p>
 								<p>
-									<span class="wpcf7-form-control-wrap mensaje"> 										<textarea name="mensaje" id="mensaje" class="wpcf7-form-control  wpcf7-textarea wpcf7-use-title-as-watermark" cols="40" rows="10" title="ingrese su mensaje aqui"></textarea></span>
+									<span class="wpcf7-form-control-wrap mensaje"> 							
+										<textarea name="mensaje" id="mensaje" class="wpcf7-form-control  wpcf7-textarea wpcf7-use-title-as-watermark" cols="40" rows="10" title="ingrese su mensaje aqui"></textarea>
+										</span>
 								</p>
 								<p>
 									<center>
@@ -186,4 +179,3 @@
 	</div>
 
 </div>
-

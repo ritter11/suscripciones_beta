@@ -6,22 +6,22 @@
 				<h5>Planes de Suscripción</h5>
 			</li>
 			<li >
-				<a id="arica" href="#">Arica</a>
+				<a class="arica" href="#">Arica</a>
 			</li>
 			<li>
-				<a id="iquique" href="#">Iquique</a>
+				<a class="iquique" href="#">Iquique</a>
 			</li>
 			<li>
-				<a id="calama" href="#">Calama</a>
+				<a class="antofagasta" href="#">Antofagasta</a>
 			</li>
 			<li>
-				<a id="antofagasta" href="#">Antofagasta</a>
+				<a class="calama" href="#">calama</a>
 			</li>
 			<li>
-				<a id="tocopilla" href="#">Tocopilla</a>
+				<a class="tocopilla" href="#">Tocopilla</a>
 			</li>
 			<li>
-				<a id="copiapo" href="#">Copiapo</a>
+				<a class="copiapo" href="#">Copiapo</a>
 			</li>
 		</ul>
 
@@ -29,7 +29,7 @@
 	<ul class="thumbnails">
 		<li class="span12">
 			<?php query_posts(array('category_name' => 'beneficios suscriptores'));
-			while ( have_posts() ) : the_post();
+while ( have_posts() ) : the_post();
 			?>
 			<a href="http://www.vidrieriadiamond.cl/wp/" target="_blank" "><img class="promo" src="<?php $src = wp_get_attachment_image_src(get_post_thumbnail_id($post -> ID), array(720, 405), false, '');
 				echo $src[0];
@@ -39,31 +39,32 @@
 	</ul>
 	<!--</div>-->
 </div>
-<div class="navbar navbar-inverse visible-phone" style="position: fixed; z-index: 10;">
+<div class="navbar visible-phone" >
+	<!--style="position: fixed; z-index: 10;"-->
 	<div class="navbar-inner">
 		<div class="container">
 			<a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-responsive-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a>
-			<a class="brand" href="#">Planes de Suscripción</a>x
+			<a class="brand" href="#">Planes de Suscripción</a>
 			<div class="nav-collapse collapse navbar-responsive-collapse">
 				<div class="navder">
 					<ul id="ciudades_phone" class="nav nav-list">
-						<li class="active">
-							<a id="arica_phone" href="#">Arica</a>
+						<li >
+							<a class="arica" href="#">Arica</a>
 						</li>
 						<li>
-							<a href="#">Iquique</a>
+							<a class="iquique" href="#">Iquique</a>
 						</li>
 						<li>
-							<a href="#">Calama</a>
+							<a class="antofagasta" href="#">Antofagasta</a>
 						</li>
 						<li>
-							<a href="#">Antofagasta</a>
+							<a class="calama" href="#">calama</a>
 						</li>
 						<li>
-							<a href="#">Tocopilla</a>
+							<a class="tocopilla" href="#">Tocopilla</a>
 						</li>
 						<li>
-							<a href="#">Copiapo</a>
+							<a class="copiapo" href="#">Copiapo</a>
 						</li>
 					</ul>
 				</div>

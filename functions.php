@@ -192,8 +192,7 @@ function promocion_especial() {
 
 /*Funcion que retorna codigo para generar los contactos*/
 function print_frecuent_question(){
-       
-               query_posts('category_name=Concursos');
+               query_posts(array( 'category_name' => 'pregunta frecuente', 'orderby' => 'title', 'order' => 'ASC' ));
                global $post;
                if(have_posts()){
                        echo "<div class='accordion' id='accordion2'>";
@@ -223,6 +222,8 @@ function print_frecuent_question(){
                }
 
 }
+
+
 /*agreagar funcion para editar la cabecera de la pagina*/
 $defaults = array(
     'default-image'          => '', # No hay URL a imagen por defecto
@@ -239,5 +240,25 @@ $defaults = array(
     'admin-preview-callback' => '',
 );
 add_theme_support( 'custom-header' , $defaults );
+
+/*area de widget para formulario de email*/
+add_action( 'widgets_init', 'form_correo' );
+function form_correo() {
+
+	/* Register the 'primary' sidebar. */
+	register_sidebar(
+		array(
+			'id' => 'formcorreo',
+			'name' => __( 'formcorreo' ),
+			'description' => __( 'este es footer publicidad' ),
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget' => '</div>',
+			'before_title' => '<h3 class="widget-title">',
+			'after_title' => '</h3>'
+		)
+	);
+
+	/* Repeat register_sidebar() code for additional sidebars. */
+}
 
 ?>
