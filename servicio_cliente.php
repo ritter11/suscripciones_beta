@@ -111,58 +111,7 @@
 		</div>
 		<div id="mail" class="accordion-body collapse">
 			<div class="accordion-inner">
-				<div id="text-6" class="container-fluid widget_text">
-					<div class="textwidget">
-						<div class="wpcf7" id="wpcf7-f196-w1-o1">
-							<form action="/wordpress/#wpcf7-f196-w1-o1" method="post" class="wpcf7-form">
-								<div style="display: none;">
-									<input type="hidden" name="_wpcf7" value="196" />
-									<input type="hidden" name="_wpcf7_version" value="3.3.3" />
-									<input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f196-w1-o1" />
-									<input type="hidden" name="_wpnonce" value="253f224268" />
-								</div>
-								<p>
-									Tu nombre (requerido)
-									<br />
-									<span class="wpcf7-form-control-wrap your-name">
-										<input type="text" name="your-name" value="" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" size="40" />
-									</span>
-								</p>
-								<p>
-									Tu Email (requerido)
-									<br />
-									<span class="wpcf7-form-control-wrap your-email">
-										<input type="text" name="your-email" value="" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" size="40" />
-									</span>
-								</p>
-								<p>
-									Asunto
-									<br />
-									<span class="wpcf7-form-control-wrap your-subject">
-										<input type="text" name="your-subject" value="" class="wpcf7-form-control wpcf7-text" size="40" />
-									</span>
-								</p>
-								<p>
-									Tu Mensaje
-								</p>
-								<p>
-									<span class="wpcf7-form-control-wrap mensaje"> 							
-										<textarea name="mensaje" id="mensaje" class="wpcf7-form-control  wpcf7-textarea wpcf7-use-title-as-watermark" cols="40" rows="10" title="ingrese su mensaje aqui"></textarea>
-										</span>
-								</p>
-								<p>
-									<center>
-										<p>
-											<input type="submit" value="Enviar" id="enviar_mail" class="wpcf7-form-control  wpcf7-submit btn" />
-										</p>
-										<p>
-									</center>
-								</p>
-								<div class="wpcf7-response-output wpcf7-display-none"></div>
-							</form>
-						</div>
-					</div>
-				</div>
+				<?php echo do_shortcode( '[contact-form-7 id="196" title="Contacto Suscripciones"]' ); ?>
 			</div>
 		</div>
 	</div>

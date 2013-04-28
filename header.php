@@ -63,8 +63,8 @@
 								<a href="#"><span><span class="wpmega-link-title">Inicio</span></span></a>
 							</li>
 						</ul>
-					</div>
-					<?php //delicate_show_navigation ('menu', 'delicate_show_pagemenu'); ?>
+					</div> 
+					<?php// delicate_show_navigation ('menu', 'delicate_show_pagemenu'); ?>
 				</div>
 				<div class="navbar hidden-phone"  >
 					<div class="container-fluid" >
